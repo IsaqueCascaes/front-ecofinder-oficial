@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "../Css/ListProducts.module.css";
 import { useAuth } from "../auth/AuthContext"; // Importando o contexto de autenticação
-
+import api from "../auth/api";
 const ListProducts = () => {
   // Estado para armazenar a lista de produtos
   const [produtos, setProdutos] = useState([]);
@@ -29,7 +28,7 @@ const ListProducts = () => {
   // Função para buscar todos os produtos do backend
   const fetchProdutos = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/produtos");
+      const response = await api.get("/produtos");
       setProdutos(response.data);
     } catch (error) {
       console.error("Erro ao buscar os produtos:", error);
@@ -39,7 +38,7 @@ const ListProducts = () => {
   // Função para excluir um produto
   const deleteProduto = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/produtos/${id}`);
+      await api.delete(`/produtos/${id}`);
       fetchProdutos();
     } catch (error) {
       console.error("Erro ao excluir o produto:", error);

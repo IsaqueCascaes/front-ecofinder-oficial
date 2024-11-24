@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import InputField from "../formFields/InputField";
 import SelectField from "../formFields/SelectField";
@@ -8,6 +7,7 @@ import Popup from "./Popup";
 import PopupCategoria from "./PopupCategoria";
 import ImageUploadByUrl from "./ImageUploadByUrl";
 import styles from "../Css/Produtos.module.css";
+import api from "../auth/api";
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -35,7 +35,7 @@ const EditProduct = () => {
   useEffect(() => {
     const fetchProduto = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/produtos/${id}`);
+        const response = await api.get(`/produtos/${id}`);
         const produtoData = response.data;
     
         // Atualiza o estado do produto
@@ -51,7 +51,7 @@ const EditProduct = () => {
 
     const fetchEmpresas = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/empresas");
+        const response = await api.get("/empresas");
         setEmpresas(response.data);
       } catch (error) {
         console.error("Erro ao buscar empresas:", error);
@@ -60,8 +60,8 @@ const EditProduct = () => {
 
     const fetchCategorias = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:5000/api/categorias"
+        const response = await api.get(
+          "/categorias"
         );
         setCategorias(response.data);
       } catch (error) {
@@ -85,7 +85,7 @@ const EditProduct = () => {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/produtos/${id}`, produto);
+      await api.put(`/produtos/${id}`, produto);
       navigate("/listar-produtos");
     } catch (error) {
       console.error("Erro ao salvar o produto:", error);

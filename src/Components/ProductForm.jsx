@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import InputField from "../formFields/InputField";
 import SelectField from "../formFields/SelectField";
 import ActionButtons from "../formFields/ActionButtons";
@@ -9,6 +8,7 @@ import PopupCategoria from "./PopupCategoria";
 import ImageUploadByUrl from "./ImageUploadByUrl";
 import styles from "../Css/Produtos.module.css";
 import "../Css/Popup.module.css";
+import api from "../auth/api";
 
 export const ProductForm = () => {
   const [empresas, setEmpresas] = useState([]);
@@ -30,7 +30,7 @@ export const ProductForm = () => {
   useEffect(() => {
     const fetchEmpresas = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/empresas");
+        const response = await api.get("/empresas");
         setEmpresas(response.data);
       } catch (error) {
         console.error("Erro ao buscar empresas:", error);
@@ -39,8 +39,8 @@ export const ProductForm = () => {
 
     const fetchCategorias = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:5000/api/categorias"
+        const response = await api.get(
+          "/categorias"
         );
         setCategorias(response.data);
       } catch (error) {
@@ -68,8 +68,8 @@ export const ProductForm = () => {
     try {
       if (novaEmpresa._id) {
         // Caso o `_id` exista, é uma edição
-        const response = await axios.put(
-          `http://localhost:5000/api/empresas/${novaEmpresa._id}`,
+        const response = await api.put(
+          `/empresas/${novaEmpresa._id}`,
           novaEmpresa
         );
         setEmpresas((prevEmpresas) =>
@@ -79,8 +79,8 @@ export const ProductForm = () => {
         );
       } else {
         // Caso contrário, é uma adição
-        const response = await axios.post(
-          "http://localhost:5000/api/empresas",
+        const response = await api.post(
+          "/empresas",
           novaEmpresa
         );
         setEmpresas([...empresas, response.data]); // Adiciona a nova empresa à lista
@@ -97,8 +97,8 @@ export const ProductForm = () => {
     try {
       if (categoriaSelecionada) {
         // Editando uma categoria
-        const response = await axios.put(
-          `http://localhost:5000/api/categorias/${categoriaSelecionada._id}`,
+        const response = await api.put(
+          `/categorias/${categoriaSelecionada._id}`,
           novaCategoria
         );
         setCategorias((prevCategorias) =>
@@ -110,8 +110,8 @@ export const ProductForm = () => {
         );
       } else {
         // Adicionando uma nova categoria
-        const response = await axios.post(
-          "http://localhost:5000/api/categorias",
+        const response = await api.post(
+          "/categorias",
           novaCategoria
         );
         setCategorias([...categorias, response.data]); // Adiciona a nova categoria à lista
@@ -145,8 +145,8 @@ export const ProductForm = () => {
     console.log("Produto a ser enviado:", produto); // Verificação dos dados antes de enviar
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/produtos",
+      const response = await api.post(
+        "/produtos",
         produto
       );
       console.log("Produto adicionado com sucesso:", response.data);
