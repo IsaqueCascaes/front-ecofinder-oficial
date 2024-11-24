@@ -1,0 +1,94 @@
+/* Estilos gerais para inputs e textareas */
+.inputField, .textareaField {
+  width: 100%;
+  padding: 0.5rem; /* 8px */
+  border: 1px solid #ccc;
+  border-radius: 0.25rem; /* 4px */
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.inputField:focus, .textareaField:focus {
+  border-color: #28a745; /* Cor verde ao focar */
+}
+
+/* Estilo comum para todos os popups */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popupContainer {
+  background-color: white;
+  padding: 1.25rem; /* 20px */
+  width: 60%;
+  max-width: 30rem; /* 480px */
+  max-height: 70vh;
+  position: relative;
+  border-radius: 0.5rem; /* 8px */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.popupClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.125rem; /* 18px */
+  cursor: pointer;
+}
+
+/* Estilo dos botões de salvar */
+.popupSave {
+  padding: 0.625rem 1.25rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-top: auto;
+  margin-bottom: 1.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.popupSave:hover {
+  background-color: darkgreen;
+}
+
+/* Seções compartilhadas para Empresa e Categoria */
+.sectionField {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fieldContainer {
+  width: 48%;
+}
+
+.descricaoSection {
+  margin-top: 1.25rem;
+}
+
+/* Adicional para responsividade */
+@media (max-width: 768px) {
+  .popupContainer {
+    width: 90%;
+  }
+}

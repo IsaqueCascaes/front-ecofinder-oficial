@@ -1,0 +1,248 @@
+/* Estilos para os cards da seção central */
+
+main {
+  height: 90vh;
+}
+
+.sectionCard {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sectionCard:hover {
+  transform: scale(1.0);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);
+  -ms-transform: scale(1.0);
+  -o-transform: scale(1.0); */
+}
+
+.poluctionCard {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 90vw; /* Limite máximo da largura do card */
+  height: auto; /* Deixa o card com altura variável */
+  margin-bottom: 2.5rem;
+  text-align: center;
+  overflow: hidden; /* Evita que o conteúdo transborde */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poluctionCard:hover {
+  transform: scale(1.0);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /*-webkit-transform: scale(1.1);
+  -moz-transform: scale(1.0);
+  -ms-transform: scale(1.0);
+  -o-transform: scale(1.0);
+  */
+  -webkit-transform: scale(1.0);
+}
+
+.levelPolution {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardLevelPolution {
+  flex-wrap: wrap;
+  background-color: #b0b0b0;
+  border: 1px solid #e0e0e0;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 40%;
+  box-sizing: border-box;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .sectionCard {
+    max-width: 90%; /* Ajusta o card para ocupar 90% da largura da tela em dispositivos menores */
+    padding: 1.5rem;
+  }
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos específicos para cada título */
+
+.sectionCard {
+  display: flex;
+  flex-direction: row;
+}
+
+.sectionCard h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.sectionCard p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  max-height: 8rem; /* Limita a altura do parágrafo */
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical caso o texto exceda o espaço */
+  word-wrap: break-word; /* Quebra as palavras longas automaticamente */
+  padding: 0 1rem; /* Espaçamento interno para evitar que o texto encoste nas bordas */
+}
+
+.sectionCard img {
+  width: 100rem;
+  height: 10rem;
+}
+.videoSection {
+  text-align: center;
+  margin: 20px 20px 2.5rem; /* Reduz o espaçamento geral */
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 93.8vw;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.videoSection:hover {
+  transform: scale(1.0);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.videoSection h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.videoSection p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.videoContainer {
+  display: flex;
+  justify-content: center; /* Centraliza o vídeo horizontalmente */
+  align-items: center;    /* Centraliza o vídeo verticalmente */
+  margin-top: 2rem;       /* Espaço superior entre o vídeo e o conteúdo acima */
+  margin-bottom: 2.5rem;  /* Espaço inferior entre o vídeo e o footer */
+}
+
+.videoContainer iframe {
+  width:800px;  /* Define a largura do vídeo */
+  height: 500px; /* Define a altura do vídeo */
+  border: none; /* Remove bordas ao redor do iframe */
+  padding: 2rem;
+}
+
+
+
+footer {
+  margin-top: 2.5rem; /* Garante um espaçamento padrão */
+}
+
+
+/* Estilos do footer */
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+
+
+.socialLinks,
+.thankYouMessage {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.thankYouMessage p {
+  font-size: 20px;
+}
+
+.socialLinks img {
+margin: 0.2rem;
+}
+
+.moreInfoContacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerBottom  {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.contactInfo {
+  justify-content: center;
+}
+
+
+
+/* Responsividade para o footer */
+@media (max-width: 768px) {
+  .socialLinks,
+  .contactInfo,
+  .thankYouMessage {
+    justify-content: center;
+    text-align: center;
+  }
+
+.levelPolution {
+  flex-direction: column;
+}
+
+.cardLevelPolution {
+  width: 78%;
+}
+
+.videoSection {
+  width: 92.3%;
+}
+}

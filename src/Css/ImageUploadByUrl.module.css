@@ -1,0 +1,66 @@
+.imageUploadContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%; /* Mesma largura do ladoEsquerdo no ProductForm */
+  margin-bottom: 1.25rem; /* Espaçamento para baixo */
+}
+
+.imageUploadContainer h2 {
+  font-size: 1rem; /* Alinhando com o tamanho da fonte de "Nome do produto" */
+  margin-bottom: 0.625rem; /* Espaçamento abaixo do h2 */
+}
+
+.inputField {
+  width: 100%; /* Garante que o input ocupe 100% da largura */
+  padding: 0.625rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 1.25rem; /* Espaçamento embaixo */
+}
+
+.inputField.error {
+  border: 1px solid red; /* Borda vermelha quando a URL for inválida */
+}
+
+.previewContainer {
+  margin-top: 0.625rem;
+  width: 100%; /* Mantém a largura da seção */
+}
+
+.imageWrapper {
+  max-width: 100%; /* Mantém a largura */
+  border: 1px solid #ddd;
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  padding: 0.625rem; /* Espaçamento interno */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imagePreview {
+  max-width: 100%;
+  max-height: 30rem; /* Define a altura máxima */
+  object-fit: contain; /* Garante que a imagem fique completamente visível dentro da div, sem cortes */
+  border-radius: 0.25rem;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.875rem; /* Tamanho da mensagem de erro */
+  margin-top: 0.625rem;
+}
+
+/* Adicional para responsividade */
+@media (max-width: 768px) {
+  .imagePreview {
+    max-width: 100%; /* Em telas menores, a imagem se ajusta à largura total */
+    max-height: auto; /* Remove a altura fixa para telas pequenas */
+  }
+}

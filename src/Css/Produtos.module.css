@@ -1,0 +1,188 @@
+/* Sem alterações nas regras universais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Estilização do container principal */
+.formContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem;
+}
+
+.ladoEsquerdo,
+.ladoDireito {
+  width: 45%;
+}
+
+.ladoEsquerdo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ladoEsquerdo h2 {
+  margin-bottom: 1.25rem;
+}
+
+.ladoDireito {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilização das áreas de texto */
+.areaTextos {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 1.25rem;
+}
+
+.campoTexto {
+  margin-bottom: 1.25rem;
+}
+
+.textareaProduto,
+.textareaRazao {
+  width: 100%;
+  height: 12.5rem;
+  padding: 0.625rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3125rem;
+}
+
+.botaoContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Espaço entre os botões */
+  margin: 4rem;
+}
+
+.botaoPublicar, .botaoCancelar {
+  padding: 0.9375rem 2.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botaoPublicar {
+  background-color: #28a745;
+  color: white;
+}
+
+.botaoPublicar:hover {
+  background-color: #218838;
+}
+
+.botaoCancelar {
+  background-color: #dc3545;
+  color: white;
+}
+
+.botaoCancelar:hover {
+  background-color: #c82333;
+}
+
+/* Estilos para os campos InputField e SelectField */
+.tarefa {
+  margin-bottom: 1.25rem; /* Espaçamento inferior */
+}
+
+.tarefa h3 {
+  margin-bottom: 0.625rem; /* Espaçamento inferior */
+  font-size: 1rem; /* Tamanho da fonte */
+}
+
+.inputField,
+.selectField {
+  width: 100%;
+  padding: 0.625rem; /* Padding interno */
+  border: 1px solid #ccc;
+  border-radius: 0.25rem; /* Canto arredondado */
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
+  appearance: none; /* Remove estilo padrão */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;base64,...'); /* Ícone de seta customizado */
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+}
+
+.inputField:focus,
+.selectField:focus {
+  outline: none;
+  border-color: #007bff; /* Cor da borda ao focar */
+}
+
+/* Estilos para ActionButtons */
+.botoesAcao {
+  display: flex;
+  gap: 0.625rem; /* Espaçamento entre botões */
+  margin-top: 0.625rem; /* Espaçamento superior */
+}
+
+.botaoAcao {
+  background-color: #007bff;
+  color: white;
+  padding: 0.625rem 1rem;
+  margin-bottom: 0.9375rem;
+  font-size: 0.875rem; /* Tamanho da fonte */
+  border: none;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botaoAcao:hover {
+  background-color: #0056b3;
+}
+
+.produtoImagem {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.texto {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .formContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ladoEsquerdo,
+  .ladoDireito {
+    width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  .inputField,
+  .selectField {
+    width: 100%;
+  }
+
+  .botaoAcao {
+    width: 100%;
+  }
+}

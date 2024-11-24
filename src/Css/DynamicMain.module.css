@@ -1,0 +1,58 @@
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Esconde os elementos que saem da tela */
+  transition: background-image 1s ease-in-out;
+  margin-bottom: 3rem;
+}
+
+/* Adicione o overlay */
+.main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Preto semitransparente */
+  z-index: 1; /* Fica abaixo do texto, mas acima do fundo */
+  pointer-events: none; /* Garante que a camada não interfira na interação */
+  transition: opacity 1s ease-in-out; /* Suaviza a transição do overlay */
+}
+
+/* Estilização do texto sobreposto */
+.overlay {
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 2; /* O texto fica acima da camada preta */
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  transform-origin: center;
+}
+
+/* Animação de deslizamento */
+.slide {
+  animation: slideLeft 1s ease-in-out; /* Duração e suavidade */
+}
+
+/* Keyframes para empurrar para a esquerda */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0); /* Posição inicial */
+  }
+  50% {
+    transform: translateX(-100%); /* Move o conteúdo atual para fora */
+  }
+  100% {
+    transform: translateX(0); /* Novo conteúdo entra da direita */
+  }
+}

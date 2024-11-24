@@ -1,0 +1,184 @@
+/* Navbar principal */
+.navbar {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around ;
+  align-items: center;
+  position: relative; /* Para posicionamento absoluto do menu */
+}
+
+/* Links gerais */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Formulário de busca */
+.searchForm {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease; /* Transição suave ao mudar de posição */
+}
+
+.searchInput {
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.searchButton {
+  background-color: #2db731;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.searchButton:hover {
+  background-color: #16941a;
+}
+
+/* Botão do menu hambúrguer */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Links e menu em telas grandes */
+.navLinksContainer {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.navLinks li {
+  margin-right: 20px;
+}
+
+.navLinks a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+
+.navLinks a:hover {
+  color: rgb(184, 184, 184);
+  transition: .3s;
+}
+
+.logoutButton {
+  background-color: red; /* Fundo vermelho */
+  color: white; /* Texto branco */
+  border: none; /* Remove borda */
+  cursor: pointer; /* Cursor pointer */
+  font-size: 16px; /* Tamanho da fonte */ /* Espaçamento interno para aparência de botão */
+  width: 3rem;
+  height: 1.4rem;
+  border-radius: 5px; /* Borda arredondada */
+  text-transform: uppercase; /* Texto em maiúsculas para destaque */
+  font-weight: bold; /* Negrito */
+  transition: background-color 0.3s ease; /* Transição suave para hover */
+}
+
+.logoutButton:hover {
+  background-color: darkred; /* Fundo vermelho escuro no hover */
+  color: white; /* Garante que o texto permaneça branco no hover */
+}
+/* Estilo para telas menores */
+@media (max-width: 850px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navLinksContainer {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 250px;
+    z-index: 100;
+  }
+
+  .navLinksContainer.active {
+    display: flex;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navLinks li {
+    margin: 10px 0;
+  }
+
+  /* Faz o formulário aparecer no menu em telas menores */
+  .searchFormInMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .searchInputInMenu {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+
+  .searchButtonInMenu {
+    width: 100%;
+    background-color: #2db731;
+    color: white;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .searchButtonInMenu:hover {
+    background-color: #16941a;
+
+  }
+}
+
+
+
+
