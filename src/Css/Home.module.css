@@ -79,14 +79,6 @@ main {
   box-sizing: border-box;
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .sectionCard {
-    max-width: 90%; /* Ajusta o card para ocupar 90% da largura da tela em dispositivos menores */
-    padding: 1.5rem;
-  }
-}
-
 .sectionContainer {
   display: flex;
   flex-direction: column;
@@ -244,5 +236,14 @@ margin: 0.2rem;
 
 .videoSection {
   width: 92.3%;
+}
+
+.sectionCard {
+  max-width: 90%; /* Ajusta o card para ocupar 90% da largura da tela em dispositivos menores */
+  padding: 1.5rem;
+}
+
+.sectionCard img {
+  display: none;
 }
 }
