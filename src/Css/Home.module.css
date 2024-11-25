@@ -224,6 +224,15 @@ margin: 0.2rem;
   .thankYouMessage {
     justify-content: center;
     text-align: center;
+    font-size: 13px;
+  }
+
+  .thankYouMessage p {
+    font-size: 14px;
+  }
+
+  .footerBottom {
+    font-size: 12px;
   }
 
 .levelPolution {
