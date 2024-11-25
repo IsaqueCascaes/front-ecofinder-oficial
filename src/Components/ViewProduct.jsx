@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import InputField from "../formFields/InputField";
 import styles from "../Css/Produtos.module.css";
+import api from "../auth/api";
 
 const ViewProduct = () => {
   const { id } = useParams();
@@ -20,9 +21,8 @@ const ViewProduct = () => {
   useEffect(() => {
     const fetchProduto = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/produtos/${id}`);
-        const data = await response.json();
-        setProduto(data);
+        const response = await api.get(`/produtos/${id}`);
+        setProduto(response.data);
       } catch (error) {
         console.error("Erro ao buscar o produto:", error);
       }

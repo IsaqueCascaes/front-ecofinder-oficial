@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import axios from 'axios';
 import styles from '../Css/Login.module.css';
 import { useAuth } from '../auth/AuthContext'; // Importando o contexto de autenticação
+import api from '../auth/api';
 
 const Login = () => {
   const [user_name, setUserName] = useState('');
@@ -17,7 +17,7 @@ const Login = () => {
 
     try {
       // Faz login com os dados do usuário
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await api.post('/auth/login', {
         user_name,
         senha,
       });

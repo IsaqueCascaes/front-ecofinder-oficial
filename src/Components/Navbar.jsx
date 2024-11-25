@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext"; // Importando o contexto de autenticação
-import axios from "axios"; // Adicionando a importação do axios
 import styles from "../Css/Navbar.module.css";
+import api from "../auth/api";
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,10 +34,10 @@ const Navbar = () => {
     try {
       const url =
         searchTerm.trim() === ""
-          ? "http://localhost:5000/api/produtos"
-          : `http://localhost:5000/api/produtos/buscar?nome=${searchTerm}`;
+          ? "/produtos"
+          : `/produtos/buscar?nome=${searchTerm}`;
 
-      const response = await axios.get(url);
+      const response = await api.get(url);
       console.log("Dados retornados pela busca:", response.data);
       navigate("/listar-produtos", { state: { produtosFiltrados: response.data } });
     } catch (error) {

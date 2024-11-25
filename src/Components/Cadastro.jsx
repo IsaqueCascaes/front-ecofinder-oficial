@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Hook para navegação
-import axios from "axios"; // Biblioteca para fazer requisições HTTP
 import styles from "../Css/Login.module.css"; // Reutilizando o mesmo estilo de Login para consistência visual
+import api from "../auth/api";
 
 const Cadastro = () => {
   // Definindo estados para armazenar o nome de usuário, senha e se o usuário é administrador
@@ -38,8 +38,8 @@ const Cadastro = () => {
 
     try {
       // Enviando uma requisição POST para o backend com os dados do novo usuário
-      const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+      const response = await api.post(
+        "/auth/register",
         {
           user_name,
           senha,

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Popup from "./Popup";
 import ActionButtons from "../formFields/ActionButtons";
+import api from "../auth/api";
 
 const EmpresaList = () => {
   // Estado para armazenar a lista de empresas
@@ -17,7 +17,7 @@ const EmpresaList = () => {
   useEffect(() => {
     const fetchEmpresas = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/empresas");
+        const response = await api.get("/empresas");
         setEmpresas(response.data); // Atualiza o estado com os dados recebidos do backend
       } catch (error) {
         console.error("Erro ao buscar empresas:", error);
@@ -44,8 +44,8 @@ const EmpresaList = () => {
     try {
       if (empresaSelecionada) {
         // Editando uma empresa existente
-        const response = await axios.put(
-          `http://localhost:5000/api/empresas/${empresaSelecionada._id}`,
+        const response = await api.put(
+          `/empresas/${empresaSelecionada._id}`,
           novaEmpresa
         );
         // Atualiza a lista de empresas com a empresa editada
@@ -56,8 +56,8 @@ const EmpresaList = () => {
         );
       } else {
         // Adicionando uma nova empresa
-        const response = await axios.post(
-          "http://localhost:5000/api/empresas",
+        const response = await api.post(
+          "/empresas",
           novaEmpresa
         );
         // Adiciona a nova empresa à lista de empresas
