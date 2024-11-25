@@ -78,9 +78,9 @@ const ListProducts = () => {
             />
 
             <div className={styles.produtoInfo}>
-              <h3 onClick={() => navigate(`/produto/${produto._id}`)} className={styles.produtoNome}>{produto.nome}</h3>
+              <h3 onClick={() => navigate(`/produto/${produto._id}`)} className={styles.produtoNome} title="Clique para ver mais informações">{produto.nome}</h3>
               {/* Acessa nome da empresa e categoria de forma segura */}
-              <p>Empresa: {produto.empresa?.nome || "Não especificada"}</p>
+              <p >Empresa: {produto.empresa?.nome || "Não especificada"}</p>
               <p>Categoria: {produto.categoria?.nome || "Não especificada"}</p>
               <p>Nível de Impacto: {produto.nivel || "Indefinido"}</p>
               <p>Ingredientes: {produto.ingredientes || "Não especificado"}</p>
